@@ -17,7 +17,8 @@ public class Main {
   private static int B; // bonus points per bonus
   private static int T; //steps
 
-  private static Map<Integer, Point>      carPositionsPerTime;
+  private static Map<Integer, CarPosition>      carPositionsPerTime;
+
   private static Map<Integer, List<Ride>> listOfRidesPerCar;
 
   public static void main(String[] args) {
@@ -34,10 +35,9 @@ public class Main {
     T = sc.nextInt();
 
     carPositionsPerTime = new HashMap<>();
-
     //init
     for(int i=0; i<F; i++) {
-      carPositionsPerTime.put(i, new Point(0,0));
+      carPositionsPerTime.put(i, new CarPosition(0, new Point(0, 0)));
     }
 
     listOfRidesPerCar = new HashMap<>();
